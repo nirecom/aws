@@ -1,5 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "VPC Stack",
   "Metadata": {
     "AWS::CloudFormation::Designer": {
       "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15": {
@@ -228,7 +229,7 @@
           "Ref": "AZ0"
         },
         "CidrBlock": {
-          "Ref": "VPC0PublicCidrBlock"
+          "Ref": "AZ0PublicCidrBlock"
         },
         "VpcId": {
           "Ref": "VPC0"
@@ -247,7 +248,7 @@
           "Ref": "AZ1"
         },
         "CidrBlock": {
-          "Ref": "VPC1PublicCidrBlock"
+          "Ref": "AZ1PublicCidrBlock"
         },
         "VpcId": {
           "Ref": "VPC0"
@@ -286,28 +287,16 @@
     "VPC0CidrBlock": {
       "Type": "String"
     },
-    "VPC0PublicCidrBlock": {
+    "AZ0PublicCidrBlock": {
       "Type": "String"
     },
-    "VPC1PublicCidrBlock": {
+    "AZ1PublicCidrBlock": {
       "Type": "String"
     }
   },
   "Outputs": {
-    "VPC0": {
-      "Value": {
-        "Ref": "VPC0"
-      }
-    },
-    "AZ0Public": {
-      "Value": {
-        "Ref": "AZ0Public"
-      }
-    },
-    "AZ1Public": {
-      "Value": {
-        "Ref": "AZ1Public"
-      }
-    }
+    "VPC0": { "Value": { "Ref": "VPC0" } },
+    "AZ0Public": { "Value": { "Ref": "AZ0Public" } },
+    "AZ1Public": { "Value": { "Ref": "AZ1Public" } }
   }
 }

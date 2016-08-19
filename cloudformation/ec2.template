@@ -1,5 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "EC2 Stack",
   "Metadata": {
     "AWS::CloudFormation::Designer": {
       "51575057-556d-4fd3-a03a-c02c7b740d68": {
@@ -251,5 +252,9 @@
     "AZ1Public": {
       "Type": "String"
     }
+  },
+  "Outputs": {
+    "AZ0BastionEIP": { "Value": { "Ref": "AZ0BastionEIP" } },
+    "AZ1BastionEIP": { "Value": { "Ref": "AZ1BastionEIP" } }
   }
 }
