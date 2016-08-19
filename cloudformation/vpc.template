@@ -1,15 +1,16 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "VPC Stack",
   "Metadata": {
     "AWS::CloudFormation::Designer": {
       "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15": {
         "size": {
-          "width": 510,
-          "height": 450
+          "width": 320,
+          "height": 290
         },
         "position": {
-          "x": -1040,
-          "y": 170
+          "x": -930,
+          "y": 160
         },
         "z": 1,
         "embeds": [
@@ -20,12 +21,12 @@
       },
       "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf": {
         "size": {
-          "width": 170,
-          "height": 110
+          "width": 130,
+          "height": 80
         },
         "position": {
-          "x": -1010,
-          "y": 370
+          "x": -900,
+          "y": 360
         },
         "z": 2,
         "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
@@ -33,12 +34,12 @@
       },
       "e0ab7093-ff5b-4641-a297-2dcfc4c9100a": {
         "size": {
-          "width": 90.00247041778891,
-          "height": 89.09691990764296
+          "width": 120,
+          "height": 80
         },
         "position": {
-          "x": -770,
-          "y": 380
+          "x": -760,
+          "y": 360
         },
         "z": 2,
         "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
@@ -50,8 +51,8 @@
           "height": 60
         },
         "position": {
-          "x": -890,
-          "y": 30
+          "x": -1010,
+          "y": 160
         },
         "z": 0,
         "embeds": []
@@ -67,12 +68,12 @@
       },
       "9f1c7f4d-1502-456d-94e7-092a19578dfd": {
         "size": {
-          "width": 170,
-          "height": 130
+          "width": 130,
+          "height": 120
         },
         "position": {
-          "x": -1010,
-          "y": 210
+          "x": -900,
+          "y": 200
         },
         "z": 2,
         "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
@@ -86,8 +87,8 @@
           "height": 60
         },
         "position": {
-          "x": -960,
-          "y": 250
+          "x": -850,
+          "y": 240
         },
         "z": 3,
         "parent": "9f1c7f4d-1502-456d-94e7-092a19578dfd",
@@ -120,6 +121,15 @@
         },
         "target": {
           "id": "17834753-7d34-4da0-8661-eeb7773d2990"
+        },
+        "z": 4
+      },
+      "24b432ec-85bb-45d4-a44d-55cc7692edcc": {
+        "source": {
+          "id": "9f1c7f4d-1502-456d-94e7-092a19578dfd"
+        },
+        "target": {
+          "id": "e0ab7093-ff5b-4641-a297-2dcfc4c9100a"
         },
         "z": 4
       }
@@ -219,7 +229,7 @@
           "Ref": "AZ0"
         },
         "CidrBlock": {
-          "Ref": "VPC0PublicCidrBlock"
+          "Ref": "AZ0PublicCidrBlock"
         },
         "VpcId": {
           "Ref": "VPC0"
@@ -238,7 +248,7 @@
           "Ref": "AZ1"
         },
         "CidrBlock": {
-          "Ref": "VPC1PublicCidrBlock"
+          "Ref": "AZ1PublicCidrBlock"
         },
         "VpcId": {
           "Ref": "VPC0"
@@ -249,14 +259,40 @@
           "id": "e0ab7093-ff5b-4641-a297-2dcfc4c9100a"
         }
       }
+    },
+    "EC2SRTA1MN3K": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "VPC0RouteTable"
+        },
+        "SubnetId": {
+          "Ref": "AZ1Public"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "24b432ec-85bb-45d4-a44d-55cc7692edcc"
+        }
+      }
     }
   },
   "Parameters": {
-    "AZ0": { "Type": "AWS::EC2::AvailabilityZone::Name" },
-    "AZ1": { "Type": "AWS::EC2::AvailabilityZone::Name" },
-    "VPC0CidrBlock": { "Type": "String" },
-    "VPC0PublicCidrBlock": { "Type": "String" },
-    "VPC1PublicCidrBlock": { "Type": "String" }
+    "AZ0": {
+      "Type": "AWS::EC2::AvailabilityZone::Name"
+    },
+    "AZ1": {
+      "Type": "AWS::EC2::AvailabilityZone::Name"
+    },
+    "VPC0CidrBlock": {
+      "Type": "String"
+    },
+    "AZ0PublicCidrBlock": {
+      "Type": "String"
+    },
+    "AZ1PublicCidrBlock": {
+      "Type": "String"
+    }
   },
   "Outputs": {
     "VPC0": { "Value": { "Ref": "VPC0" } },

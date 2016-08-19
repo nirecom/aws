@@ -1,0 +1,33 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Route53 Stack",
+  "Resources": {
+    "Bastion0DNSRecord": {
+      "Type" : "AWS::Route53::RecordSet",
+      "Properties": {
+        "HostedZoneName": { "Fn::Join": [ "", [ { "Ref": "HostedZone" }, "." ]]},
+        "Comment": "A record for bastion instance",
+        "Name": { "Fn::Join": [ "", [ "bs0.", { "Ref": "HostedZone" } ]]},
+        "Type": "A",
+        "TTL": "300",
+        "ResourceRecords": [ { "Ref": "AZ0BastionEIP" } ]
+      }
+    },
+    "Bastion1DNSRecord": {
+      "Type" : "AWS::Route53::RecordSet",
+      "Properties": {
+        "HostedZoneName": { "Fn::Join": [ "", [ { "Ref": "HostedZone" }, "." ]]},
+        "Comment": "A record for bastion instance",
+        "Name": { "Fn::Join": [ "", [ "bs1.", { "Ref": "HostedZone" } ]]},
+        "Type": "A",
+        "TTL": "300",
+        "ResourceRecords": [ { "Ref": "AZ1BastionEIP" } ]
+      }
+    }
+  },
+  "Parameters": {
+    "HostedZone": { "Type": "String" },
+    "AZ0BastionEIP": { "Type": "String" },
+    "AZ1BastionEIP": { "Type": "String" }
+  }
+}

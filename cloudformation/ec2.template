@@ -1,5 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "EC2 Stack",
   "Metadata": {
     "AWS::CloudFormation::Designer": {
       "51575057-556d-4fd3-a03a-c02c7b740d68": {
@@ -8,11 +9,88 @@
           "height": 60
         },
         "position": {
-          "x": -1000,
-          "y": 500
+          "x": 110,
+          "y": 170
         },
-        "z": 2,
+        "z": 1,
         "embeds": []
+      },
+      "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 60,
+          "y": 90
+        },
+        "z": 1,
+        "embeds": [],
+        "ismemberof": [
+          "51575057-556d-4fd3-a03a-c02c7b740d68"
+        ]
+      },
+      "902a22c1-6303-4a05-a945-77b05b8d7b31": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 60,
+          "y": 10
+        },
+        "z": 1,
+        "embeds": [],
+        "isconnectedto": [
+          "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
+        ]
+      },
+      "a922da40-3c7e-4060-8def-fcdd87b65909": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 170,
+          "y": 90
+        },
+        "z": 0,
+        "embeds": [],
+        "ismemberof": [
+          "51575057-556d-4fd3-a03a-c02c7b740d68"
+        ]
+      },
+      "a97f29c8-32b0-4507-b111-c784af3b5db6": {
+        "source": {
+          "id": "a922da40-3c7e-4060-8def-fcdd87b65909"
+        },
+        "target": {
+          "id": "51575057-556d-4fd3-a03a-c02c7b740d68"
+        },
+        "z": 2
+      },
+      "e443d2bb-2db4-4672-9c2b-a33b9c69b97e": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 170,
+          "y": 10
+        },
+        "z": 0,
+        "isconnectedto": [
+          "a922da40-3c7e-4060-8def-fcdd87b65909"
+        ]
+      },
+      "a7573c13-9361-4441-9447-0226d7ab42eb": {
+        "source": {
+          "id": "e443d2bb-2db4-4672-9c2b-a33b9c69b97e"
+        },
+        "target": {
+          "id": "a922da40-3c7e-4060-8def-fcdd87b65909"
+        },
+        "z": 2
       }
     },
     "902a22c1-6303-4a05-a945-77b05b8d7b31": {
@@ -66,7 +144,7 @@
     }
   },
   "Resources": {
-    "VPC0SecurityGroup": {
+    "BastionSecurityGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "VpcId": {
@@ -86,21 +164,7 @@
         }
       }
     },
-    "VPC0BastionEIP": {
-      "Type": "AWS::EC2::EIP",
-      "Properties": {
-        "InstanceId": {
-          "Ref": "VPC0Bastion"
-        },
-        "Domain": "vpc"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
-        }
-      }
-    },
-    "VPC0Bastion": {
+    "AZ0Bastion": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "InstanceType": "t2.nano",
@@ -113,7 +177,7 @@
         "ImageId": "ami-a21529cc",
         "SecurityGroupIds": [
           {
-            "Ref": "VPC0SecurityGroup"
+            "Ref": "BastionSecurityGroup"
           }
         ]
       },
@@ -122,12 +186,75 @@
           "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
         }
       }
+    },
+    "AZ1Bastion": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "InstanceType": "t2.nano",
+        "KeyName": {
+          "Ref": "KeyName"
+        },
+        "SubnetId": {
+          "Ref": "AZ1Public"
+        },
+        "ImageId": "ami-a21529cc",
+        "SecurityGroupIds": [
+          {
+            "Ref": "BastionSecurityGroup"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "a922da40-3c7e-4060-8def-fcdd87b65909"
+        }
+      }
+    },
+    "AZ0BastionEIP": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "AZ0Bastion"
+        },
+        "Domain": "vpc"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
+        }
+      }
+    },
+    "AZ1BastionEIP": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "AZ1Bastion"
+        },
+        "Domain": "vpc"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "e443d2bb-2db4-4672-9c2b-a33b9c69b97e"
+        }
+      }
     }
   },
   "Parameters": {
-    "KeyName": { "Type": "String" },
-    "VPC0": { "Type": "AWS::EC2::VPC::Id" },
-    "AZ0Public": { "Type": "String" },
-    "AZ1Public": { "Type": "String" }
+    "KeyName": {
+      "Type": "String"
+    },
+    "VPC0": {
+      "Type": "AWS::EC2::VPC::Id"
+    },
+    "AZ0Public": {
+      "Type": "String"
+    },
+    "AZ1Public": {
+      "Type": "String"
+    }
+  },
+  "Outputs": {
+    "AZ0BastionEIP": { "Value": { "Ref": "AZ0BastionEIP" } },
+    "AZ1BastionEIP": { "Value": { "Ref": "AZ1BastionEIP" } }
   }
 }
