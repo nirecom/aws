@@ -76,7 +76,8 @@
           "AZ1BastionEIP": { "Fn::GetAtt": [ "EC2Stack", "Outputs.AZ1BastionEIP" ] }
         },
         "TimeoutInMinutes": "5"
-      }
+      },
+      "DependsOn": "EC2Stack"
     }
   },
   "Parameters": {
