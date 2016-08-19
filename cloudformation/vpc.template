@@ -14,7 +14,6 @@
         "z": 1,
         "embeds": [
           "e0ab7093-ff5b-4641-a297-2dcfc4c9100a",
-          "51575057-556d-4fd3-a03a-c02c7b740d68",
           "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf",
           "9f1c7f4d-1502-456d-94e7-092a19578dfd"
         ]
@@ -30,9 +29,7 @@
         },
         "z": 2,
         "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": [
-          "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        ]
+        "embeds": []
       },
       "e0ab7093-ff5b-4641-a297-2dcfc4c9100a": {
         "size": {
@@ -108,59 +105,6 @@
         },
         "z": 2
       },
-      "51575057-556d-4fd3-a03a-c02c7b740d68": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -1000,
-          "y": 500
-        },
-        "z": 2,
-        "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": []
-      },
-      "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -955.9105126009051,
-          "y": 399.41740160772736
-        },
-        "z": 3,
-        "parent": "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf",
-        "embeds": [],
-        "ismemberof": [
-          "51575057-556d-4fd3-a03a-c02c7b740d68"
-        ]
-      },
-      "7c38067c-1d0b-4fe0-b6ef-daa5e1acf6f5": {
-        "source": {
-          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        },
-        "target": {
-          "id": "51575057-556d-4fd3-a03a-c02c7b740d68"
-        },
-        "z": 4
-      },
-      "902a22c1-6303-4a05-a945-77b05b8d7b31": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -1140,
-          "y": 400
-        },
-        "z": 0,
-        "embeds": [],
-        "isconnectedto": [
-          "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        ]
-      },
       "9fe9ca2c-fdb3-4ca9-b0d3-69730c4bd7bf": {
         "source": {
           "id": "8998347b-159d-4e95-a4e9-f15988991add"
@@ -176,15 +120,6 @@
         },
         "target": {
           "id": "17834753-7d34-4da0-8661-eeb7773d2990"
-        },
-        "z": 4
-      },
-      "6375b89a-9ec9-40a4-aacb-15f178f83f63": {
-        "source": {
-          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
-        },
-        "target": {
-          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
         },
         "z": 4
       }
