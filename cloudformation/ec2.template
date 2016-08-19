@@ -1,0 +1,70 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Metadata": {
+  },
+  "Resources": {
+    "VPC0SecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "VpcId": {
+          "Ref": "VPC0"
+        },
+        "GroupDescription": "Allow SSH",
+        "SecurityGroupIngress": {
+          "IpProtocol": "tcp",
+          "FromPort": "22",
+          "ToPort": "22",
+          "CidrIp": "0.0.0.0/0"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "51575057-556d-4fd3-a03a-c02c7b740d68"
+        }
+      }
+    },
+    "VPC0BastionEIP": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "VPC0Bastion"
+        },
+        "Domain": "vpc"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
+        }
+      }
+    },
+    "VPC0Bastion": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "InstanceType": "t2.nano",
+        "KeyName": {
+          "Ref": "KeyName"
+        },
+        "SubnetId": {
+          "Ref": "AZ0Public"
+        },
+        "ImageId": "ami-a21529cc",
+        "SecurityGroupIds": [
+          {
+            "Ref": "VPC0SecurityGroup"
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "KeyName": { "Type": "String" },
+    "VPC0": { "Type": "AWS::EC2::VPC::Id" },
+    "AZ0Public": { "Type": "String" },
+    "AZ1Public": { "Type": "String" }
+  }
+}

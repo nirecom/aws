@@ -1,375 +1,59 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Metadata": {
-    "AWS::CloudFormation::Designer": {
-      "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15": {
-        "size": {
-          "width": 510,
-          "height": 450
-        },
-        "position": {
-          "x": -1040,
-          "y": 170
-        },
-        "z": 1,
-        "embeds": [
-          "e0ab7093-ff5b-4641-a297-2dcfc4c9100a",
-          "51575057-556d-4fd3-a03a-c02c7b740d68",
-          "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf",
-          "9f1c7f4d-1502-456d-94e7-092a19578dfd"
-        ]
-      },
-      "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf": {
-        "size": {
-          "width": 170,
-          "height": 110
-        },
-        "position": {
-          "x": -1010,
-          "y": 370
-        },
-        "z": 2,
-        "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": [
-          "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        ]
-      },
-      "e0ab7093-ff5b-4641-a297-2dcfc4c9100a": {
-        "size": {
-          "width": 90.00247041778891,
-          "height": 89.09691990764296
-        },
-        "position": {
-          "x": -770,
-          "y": 380
-        },
-        "z": 2,
-        "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": []
-      },
-      "17834753-7d34-4da0-8661-eeb7773d2990": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -890,
-          "y": 30
-        },
-        "z": 0,
-        "embeds": []
-      },
-      "fc9726e7-1213-4817-ba56-cb2a5be03217": {
-        "source": {
-          "id": "17834753-7d34-4da0-8661-eeb7773d2990"
-        },
-        "target": {
-          "id": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15"
-        },
-        "z": 0
-      },
-      "9f1c7f4d-1502-456d-94e7-092a19578dfd": {
-        "size": {
-          "width": 170,
-          "height": 130
-        },
-        "position": {
-          "x": -1010,
-          "y": 210
-        },
-        "z": 2,
-        "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": [
-          "8998347b-159d-4e95-a4e9-f15988991add"
-        ]
-      },
-      "8998347b-159d-4e95-a4e9-f15988991add": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -960,
-          "y": 250
-        },
-        "z": 3,
-        "parent": "9f1c7f4d-1502-456d-94e7-092a19578dfd",
-        "embeds": [],
-        "references": [
-          "17834753-7d34-4da0-8661-eeb7773d2990"
-        ]
-      },
-      "ba61c198-7dba-42c2-ba30-20f6b5d36732": {
-        "source": {
-          "id": "9f1c7f4d-1502-456d-94e7-092a19578dfd"
-        },
-        "target": {
-          "id": "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf"
-        },
-        "z": 2
-      },
-      "51575057-556d-4fd3-a03a-c02c7b740d68": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -1000,
-          "y": 500
-        },
-        "z": 2,
-        "parent": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15",
-        "embeds": []
-      },
-      "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -955.9105126009051,
-          "y": 399.41740160772736
-        },
-        "z": 3,
-        "parent": "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf",
-        "embeds": [],
-        "ismemberof": [
-          "51575057-556d-4fd3-a03a-c02c7b740d68"
-        ]
-      },
-      "7c38067c-1d0b-4fe0-b6ef-daa5e1acf6f5": {
-        "source": {
-          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        },
-        "target": {
-          "id": "51575057-556d-4fd3-a03a-c02c7b740d68"
-        },
-        "z": 4
-      },
-      "902a22c1-6303-4a05-a945-77b05b8d7b31": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": -1140,
-          "y": 400
-        },
-        "z": 0,
-        "embeds": [],
-        "isconnectedto": [
-          "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        ]
-      },
-      "9fe9ca2c-fdb3-4ca9-b0d3-69730c4bd7bf": {
-        "source": {
-          "id": "8998347b-159d-4e95-a4e9-f15988991add"
-        },
-        "target": {
-          "id": "17834753-7d34-4da0-8661-eeb7773d2990"
-        },
-        "z": 4
-      },
-      "a13eb7bc-4ff3-406c-9986-4c7ef490c543": {
-        "source": {
-          "id": "8998347b-159d-4e95-a4e9-f15988991add"
-        },
-        "target": {
-          "id": "17834753-7d34-4da0-8661-eeb7773d2990"
-        },
-        "z": 4
-      },
-      "6375b89a-9ec9-40a4-aacb-15f178f83f63": {
-        "source": {
-          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
-        },
-        "target": {
-          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        },
-        "z": 4
+  "Description": "Main Stack",
+  "Mappings": {
+    "GlobalSettings": {
+      "S3": {
+        "TemplateDir": "https://s3-ap-northeast-1.amazonaws.com/nirecom-cloudformation-templates/"
       }
     }
   },
   "Resources": {
-    "VPC0GatewayAttachment": {
-      "Type": "AWS::EC2::VPCGatewayAttachment",
+    "VPCStack": {
+      "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "InternetGatewayId": {
-          "Ref": "VPC0GW"
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Fn::FindInMap": [ "GlobalSettings", "S3", "TemplateDir" ]
+              },
+              "vpc.template"
+            ]
+          ]
         },
-        "VpcId": {
-          "Ref": "VPC0"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "fc9726e7-1213-4817-ba56-cb2a5be03217"
-        }
+        "Parameters": {
+          "AZ0": { "Ref": "AZ0" },
+          "AZ1": { "Ref": "AZ1" },
+          "VPC0CidrBlock": { "Ref": "VPC0CidrBlock" },
+          "VPC0PublicCidrBlock": { "Ref": "VPC0PublicCidrBlock" },
+          "VPC1PublicCidrBlock": { "Ref": "VPC1PublicCidrBlock" }
+        },
+        "TimeoutInMinutes": "3"
       }
     },
-    "VPC0": {
-      "Type": "AWS::EC2::VPC",
+    "EC2Stack": {
+      "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "CidrBlock": {
-          "Ref": "VPC0CidrBlock"
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Fn::FindInMap": [ "GlobalSettings", "S3", "TemplateDir" ]
+              },
+              "ec2.template"
+            ]
+          ]
         },
-        "EnableDnsSupport": "true",
-        "EnableDnsHostnames": "true"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "f1310c24-9ec6-437b-81e4-1ed5fb5ddb15"
-        }
-      }
-    },
-    "VPC0RouteTable": {
-      "Type": "AWS::EC2::RouteTable",
-      "Properties": {
-        "VpcId": {
-          "Ref": "VPC0"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "9f1c7f4d-1502-456d-94e7-092a19578dfd"
-        }
-      }
-    },
-    "VPC0Route": {
-      "Type": "AWS::EC2::Route",
-      "Properties": {
-        "RouteTableId": {
-          "Ref": "VPC0RouteTable"
+        "Parameters": {
+          "KeyName": { "Ref": "KeyName" },
+          "VPC0": { "Fn::GetAtt": [ "VPCStack", "Outputs.VPC0" ] },
+          "AZ0Public": { "Fn::GetAtt": [ "VPCStack", "Outputs.AZ0Public" ] },
+          "AZ1Public": { "Fn::GetAtt": [ "VPCStack", "Outputs.AZ1Public" ] }
         },
-        "DestinationCidrBlock": "0.0.0.0/0",
-        "GatewayId": {
-          "Ref": "VPC0GW"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "8998347b-159d-4e95-a4e9-f15988991add"
-        }
-      }
-    },
-    "VPC0SecurityGroup": {
-      "Type": "AWS::EC2::SecurityGroup",
-      "Properties": {
-        "VpcId": {
-          "Ref": "VPC0"
-        },
-        "GroupDescription": "Allow SSH",
-        "SecurityGroupIngress": {
-          "IpProtocol": "tcp",
-          "FromPort": "22",
-          "ToPort": "22",
-          "CidrIp": "0.0.0.0/0"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "51575057-556d-4fd3-a03a-c02c7b740d68"
-        }
-      }
-    },
-    "VPC0Bastion": {
-      "Type": "AWS::EC2::Instance",
-      "Properties": {
-        "InstanceType": "t2.nano",
-        "KeyName": {
-          "Ref": "KeyName"
-        },
-        "SubnetId": {
-          "Ref": "AZ0Public"
-        },
-        "ImageId": "ami-a21529cc",
-        "SecurityGroupIds": [
-          {
-            "Ref": "VPC0SecurityGroup"
-          }
-        ]
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "d4d1573a-6a6c-4e39-bd93-6d6e3de2d1eb"
-        }
-      }
-    },
-    "VPC0BastionEIP": {
-      "Type": "AWS::EC2::EIP",
-      "Properties": {
-        "InstanceId": {
-          "Ref": "VPC0Bastion"
-        },
-        "Domain": "vpc"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "902a22c1-6303-4a05-a945-77b05b8d7b31"
-        }
-      }
-    },
-    "VPC0SubnetRouteTableAssociation": {
-      "Type": "AWS::EC2::SubnetRouteTableAssociation",
-      "Properties": {
-        "RouteTableId": {
-          "Ref": "VPC0RouteTable"
-        },
-        "SubnetId": {
-          "Ref": "AZ0Public"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "ba61c198-7dba-42c2-ba30-20f6b5d36732"
-        }
-      }
-    },
-    "VPC0GW": {
-      "Type": "AWS::EC2::InternetGateway",
-      "Properties": {},
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "17834753-7d34-4da0-8661-eeb7773d2990"
-        }
-      }
-    },
-    "AZ0Public": {
-      "Type": "AWS::EC2::Subnet",
-      "Properties": {
-        "AvailabilityZone": {
-          "Ref": "AZ0"
-        },
-        "CidrBlock": {
-          "Ref": "VPC0PublicCidrBlock"
-        },
-        "VpcId": {
-          "Ref": "VPC0"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "2cc1e0f0-7dbb-466a-b161-31ea84a64bbf"
-        }
-      }
-    },
-    "AZ1Public": {
-      "Type": "AWS::EC2::Subnet",
-      "Properties": {
-        "AvailabilityZone": {
-          "Ref": "AZ1"
-        },
-        "CidrBlock": {
-          "Ref": "VPC1PublicCidrBlock"
-        },
-        "VpcId": {
-          "Ref": "VPC0"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "e0ab7093-ff5b-4641-a297-2dcfc4c9100a"
-        }
+        "TimeoutInMinutes": "5"
       }
     }
   },
