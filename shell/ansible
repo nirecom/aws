@@ -1,0 +1,6 @@
+sudo apt-get -y update
+sudo apt-get -y install python-pip
+# for older Ubuntu OS
+sudo apt-get -y install python2.7-dev
+#sudo pip install --upgrade setuptools --user python
+sudo pip install ansible
