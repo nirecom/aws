@@ -3,4 +3,4 @@
   become_user: root
   tasks:
     - user: name=nire
-      apt: pkg=git
+    - apt: pkg=git
