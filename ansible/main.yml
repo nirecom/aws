@@ -2,5 +2,5 @@
   become: yes
   become_user: root
   tasks:
-    - user: name=nire
-    - apt: pkg=git
+    - name: Install git
+      yum: name=git state=latest
