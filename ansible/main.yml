@@ -1,6 +1,19 @@
 - hosts: all
   become: yes
   become_user: root
+  vars:
+    - homedir: /home/{{my_user}}
   tasks:
+    - name: yum -y update
+      yum: name=* state=latest
     - name: Install git
       yum: name=git state=latest
+    - name: Add a new user
+      user: name={{my_user}} password={{my_password}} groups={{my_group}} state=present
+
+    - name: mkdir .ssh
+      file: dest={{homedir}}/.ssh/ state=directory owner={{my_user}} group={{my_group}} mode=700
+    - name: add authorized_keys
+      file: dest={{homedir}}/.ssh/authorized_keys state=touch owner={{my_user}} group={{my_group}} mode=600
+    - name: copy publickey
+      copy: src={{my_pubkey_path}} dest={{homedir}}/.ssh/authorized_keys
